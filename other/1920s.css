@@ -1,0 +1,278 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    /*sets the font style to Arial or a generic sans-serif if Arial is unavailable*/
+    /*removes default space around the body*/
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    position: relative;
+    /*to ensure side menu overlays*/
+}
+
+/*TITLE AND THE MENU BUTTON*/
+header {
+    background-color: rgba(51, 51, 51);
+    color: white;
+    display: flex;
+    /*spreads the elements (menu button)*/
+    align-items: center;
+    /*vertically centers items*/
+    justify-content: space-between;
+    /*spaces items evenly, with one at each end*/
+    padding: 10px 20px;
+    /*adds inner spacing around the header*/
+}
+
+/*TITLE*/
+header h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 0;
+    /*removes default margins*/
+}
+
+main {
+    padding: 20px;
+    /*Adds space around the main content.*/
+    text-align: center;
+    /*centers the text*/
+    background-color: rgba(255, 255, 255, 0.9);
+    /*semi transparent because of the contrast with black*/
+    z-index: 1;
+    /* Ensure main content stays below the side menu */
+}
+
+/*LOOK OF THE MENU BUTTON*/
+#menu-toggle {
+    background: none;
+    /*removes background styling*/
+    border: none;
+    /*removes borders*/
+    color: white;
+    font-size: 1.2em;
+    /*Increases the font size*/
+    cursor: pointer;
+    /*Changes the cursor to a pointer on hover*/
+}
+
+/*DESIGN OF THE SIDE MENU*/
+nav {
+    position: fixed;
+    /*Pins the menu to the viewport*/
+    /*Starts hidden outside the right edge*/
+    top: 0;
+    right: -250px;
+    /*Sets the menu's size*/
+    width: 250px;
+    height: 100%;
+    background-color: #444;
+    overflow-y: auto;
+    /*Enables scrolling if content overflows vertically*/
+    z-index: 2000;
+    /*Ensures it appears above other elements */
+}
+
+/*DISPLAYING THE SIDE MENU*/
+nav.open {
+    right: 0;
+    /* Moves the menu into view*/
+}
+
+/*SIDE MENU */
+nav ul {
+    list-style: none;
+    /*Removes bullet points*/
+    /*Removes spacing*/
+    padding: 0;
+    margin: 0;
+}
+
+/*SIDE MENU COLUMNS*/
+nav ul li {
+    padding: 10px;
+    /*adds padding*/
+    border-bottom: 1px solid #555;
+    /*adds a bottom border*/
+}
+
+/*SIDE MENU TEXT*/
+nav ul li a {
+    text-decoration: none;
+    /*Removes underlines from links*/
+    color: white;
+}
+
+.gallery {
+    display: grid;
+    /*Creates a grid layout*/
+    grid-template-columns: repeat(4, 1fr);
+    /*four equal columns*/
+    gap: 20px;
+    /*Adds space between grid items*/
+    margin: 0 auto;
+    position: relative;
+    /* Ensure the gallery is above the base content */
+    max-width: 1600x;
+    /*Limits the gallery width*/
+}
+
+.gallery a {
+    position: relative;
+    text-decoration: none;
+}
+
+.gallery img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/*CONTAINER FOR EACH PHOTO FROM THE GALLERY*/
+.gallery-container {
+
+    position: relative;
+    display: inline-block;
+}
+
+/*TITLE FOR EACH PHOTO*/
+.gallery-title {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 5px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/*when the user hovers over the .gallery-container it will make the .gallery-title visible by changing its display property to block*/
+.gallery-container:hover .gallery-title {
+    display: block;
+}
+
+/*SEMI TRANSPARENT BACKGROUND BEHIND THE POPUP*/
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1500;
+    /* Ensure on top of other elements */
+}
+
+.popup-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* makes them go to the next row */
+    gap: 30px;
+    width: 100%;
+    padding: 0;
+}
+
+/*centers the description box on the screen with a semi-transparent overlay*/
+.description-box {
+    width: 80%;
+    max-width: 1200px;
+    height: auto;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 2000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);/*this rule ensures that the element's middle aligns with the center*/
+}
+
+.description-box h3 {
+    margin: 0 0 10px;
+}
+
+.description-box button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.popup-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-image {
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.popup-image:hover {
+    transform: scale(1.05);
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1500;
+}
+
+.enlarged-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2500;
+}
+
+.enlarged-img {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 8px;
+    z-index: 2600;
+}
+
+#description-box {
+    display: none;
+}
+
+#overlay {
+    display: none;
+}
