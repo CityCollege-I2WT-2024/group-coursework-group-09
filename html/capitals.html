@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html id = "bg">
+    <head>
+        <meta charset = "utf-8">
+        <title> Fashion Capitals </title>
+        <style>
+            h1 {text-align: center;}
+            h3 {text-align: center;}
+            iframe {height: 10cm; width: 15cm; position: relative; background-image: url(images/pink.avif);
+                margin-left: 11cm; margin-top: 4.5cm;}
+            #bg {background-color: lightskyblue; background-image: url(images/smaller_world.png); background-size: cover; 
+                background-repeat: no-repeat; background-attachment: fixed; overflow: hidden;}
+            #pinNY {height: 1cm; width: auto; margin-left: 11cm; margin-top: 2.7cm;}
+            #pinLN {height: 1cm; width: auto; margin-left: 22.7cm; margin-top: 0.5cm;}
+            #pinPS {height: 1cm; width: auto; margin-left: 23.4cm; margin-top: 1.2cm;}
+            #pinML {height: 1cm; width: auto; margin-left: 24.5cm; margin-top: 2.2cm;}
+            #ifd {display: none;}
+            #sth {background-color: rgba(255, 255, 255, 0.8); border: 2px solid black;} 
+            #pin1 {margin-top: 3cm; margin-left: 10.9cm;}
+            .pins {cursor: pointer; position: fixed;}
+           
+            /* start of paulinas code */
+
+            #menu-toggle { /* #- id selector, .- class selector */
+                background: none;
+                border: none;
+                color: black;
+                font-size: 1.2em;
+                cursor: pointer; /* change the cursor to point */
+                float: right;
+                margin-top: 0.4cm;
+                margin-right: 0.4cm;
+            }
+            nav {
+                position: fixed;
+                top: 0;
+                right: -250px; /* Start hidden on the right */
+                width: 250px;
+                height: 100%;
+                background-color: #444;
+                overflow-y: auto;
+                transition: right 0.3s; /* Smooth sliding effect */
+            }
+            nav.open {
+                right: 0; /* Move into view */
+            }
+            nav ul {
+                list-style: none; /* remove the bullets*/
+                padding: 0;
+                margin: 0;
+            }
+            nav ul li {
+                padding: 10px;
+                border-bottom: 1px solid #555;
+            }
+            nav ul li a {
+                text-decoration: none;
+                color: white;
+                display: block;
+            }
+
+            /* end of paulinas code */
+
+        </style>
+    </head>
+    <body>
+        <header id = "sth">
+            <button id="menu-toggle">&#9776;</button>
+            <h1> The world's fashion capitals </h1>
+            <h3> 
+                Here you will find the "The Big Four" fashion capitals. Feel free to read up on them so you can better 
+                understand why these cities became so important to the fashion industry.
+            </h3>
+        </header>
+
+        <!-- start of paulinas code -->
+        <nav id="side-menu">
+            <ul>
+                <li><a href="homePage.html">Home</a></li>
+                <li><a href="1920s.html">1920s</a></li>
+                <li><a href="1930s.html">1930s</a></li>
+                <li><a href="1940s.html">1940s</a></li>
+                <li><a href="1950s.html">1950s</a></li>
+                <li><a href="1960s.html">1960s</a></li>
+                <li><a href="1970s.html">1970s</a></li>
+                <li><a href="1980s.html">1980s</a></li>
+                <li><a href="1990s.html">1990s</a></li>
+                <li><a href="2000s.html">2000s</a></li>
+                <li><a href="2010s.html">2010s</a></li>
+                <li><a href="2020s.html">2020s</a></li>
+                <li><a href="icons.html">Fashion Icons</a></li>
+                <li><a href="designers.html">Fashion Designers</a></li>
+                <li><a href="quiz.html">Decades Quiz</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+        <!-- end of paulinas code -->
+
+        <p>
+        <img id = "pinNY" class = "pins" src = "images/pin.png">
+        <img id = "pinLN" class = "pins" src = "images/pin.png">
+        <img id = "pinPS" class = "pins" src = "images/pin.png">
+        <img id = "pinML" class = "pins" src = "images/pin.png">
+        
+        <div id = "ifd">
+            <iframe id = "ifm"> </iframe>
+        </div>>
+
+        </p>
+
+        <script>
+            // start of paulinas code
+            const menuToggle = document.getElementById('menu-toggle');
+            const sideMenu = document.getElementById('side-menu');
+
+            // Toggle menu open and close
+            menuToggle.addEventListener('click', (event) => {
+                event.stopPropagation();
+                sideMenu.classList.toggle('open');
+            });
+
+            // Close the menu if clicking outside
+            document.addEventListener('click', (event) => {
+                if (!sideMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                    sideMenu.classList.remove('open');
+                }
+            }); // end of paulinas code
+
+            const iframe1 = document.getElementById('ifd');
+            const iframe2 = document.getElementById('ifm');
+            const pin1 = document.getElementById('pinNY');
+            const pin2 = document.getElementById('pinLN');
+            const pin3 = document.getElementById('pinPS');
+            const pin4 = document.getElementById('pinML');
+            
+            let open1 = false;
+            let open2 = false;
+            let open3 = false;
+            let open4 = false;
+
+            pin1.addEventListener('click', function() {
+                if (open1) {
+                    iframe1.style.display = 'none';
+                    open1 = false;
+                } 
+                else {
+                    iframe1.style.display = 'block';
+                    iframe2.src = 'nyc.html';
+                    open1 = true;
+                    open2 = false;
+                    open3 = false;
+                    open4 = false;
+                }
+            });
+        
+            pin2.addEventListener('click', function() {
+                if (open2) {
+                    iframe1.style.display = 'none';
+                    open2 = false;
+                } 
+                else {
+                    iframe1.style.display = 'block';
+                    iframe2.src = 'london.html';
+                    open1 = false;
+                    open2 = true;
+                    open3 = false;
+                    open4 = false;
+                }
+            });
+    
+            pin3.addEventListener('click', function() {
+                if (open3) {
+                    iframe1.style.display = 'none';
+                    open3 = false;
+                } 
+                else {
+                    iframe1.style.display = 'block';
+                    iframe2.src = 'paris.html';
+                    open1 = false;
+                    open2 = false;
+                    open3 = true;
+                    open4 = false;
+                }
+
+            });
+
+            pin4.addEventListener('click', function() {
+                if (open4) {
+                    iframe1.style.display = 'none';
+                    open4 = false;
+                } 
+                else {
+                    iframe1.style.display = 'block';
+                    iframe2.src = 'milan.html';
+                    open1 = false;
+                    open2 = false;
+                    open3 = false;
+                    open4 = true;
+                }
+            });
+        </script>
+    </body>
+</html>
