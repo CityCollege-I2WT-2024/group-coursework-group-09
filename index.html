@@ -1,15 +1,316 @@
 <!DOCTYPE html>
-<!-- Group name:
-     Group members:
+<!-- Group name: Group 09
+     Group members: Paulina Doroski, Lea Petrovic, Kostandina Mara, Ioannis Maragiannis
 -->
-<!-- developed by: -->
+<!-- developed by: Paulina Doroski-->
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Group Coursework</title>
+  <title>Fashion Through Decades</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('photos/leaPetrovic.jpg') no-repeat center center fixed;
+      background-size: cover;
+      overflow-y: auto;
+    }
+
+    header {
+      background-color: rgba(51, 51, 51);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5em;
+    }
+
+    #menu-toggle {
+      position: fixed;
+      top: 10px;
+      right: 25px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.2em;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      right: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: rgba(68, 68, 68, 0.9);
+      overflow-y: auto;
+      transition: right 0.3s;
+    }
+
+    nav.open {
+      right: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      padding: 10px;
+      border-bottom: 1px solid #555;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      display: block;
+    }
+
+    main {
+      padding: 20px;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.9);
+      margin: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .gallery {
+      display: flex;
+      gap: 15px;
+      padding: 20px;
+      margin-top: 550px;
+      overflow-x: hidden;/*to prevent the horizontal scrolling*/
+      position: relative;
+    }
+
+    .gallery a {
+      text-decoration: none;
+      display: inline-block;
+      position: relative;
+      /* to make the heading positioned relative to the anchor tag */
+    }
+
+    .gallery img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .hover-heading {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      text-align: center;
+      font-size: 16px;
+      padding: 5px;
+      z-index: 1;
+      /* keeps the heading above the image */
+
+    }
+
+    footer {
+      display: flex;
+      background-color: rgba(51, 51, 51);
+    }
+
+    footer p {
+      margin-left: 10px;
+      /* moves the text a bit to the left */
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #444c51;
+    }
+
+    /* arrow styles */
+    .arrow {
+      position: fixed;
+      top: 90%;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      font-size: 24px;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .arrow-left {
+      left: 10px;
+    }
+
+    .arrow-right {
+      right: 10px;
+    }
+
+    .arrow:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  </style>
 </head>
+
 <body>
-    <p>Add your code here</p>
+  <header>
+    <h1>Fashion Through Decades</h1>
+    <button id="menu-toggle">&#9776;</button>
+  </header>
+
+  <nav id="side-menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="1920s.html">1920s</a></li>
+      <li><a href="1930s.html">1930s</a></li>
+      <li><a href="1940s.html">1940s</a></li>
+      <li><a href="1950s.html">1950s</a></li>
+      <li><a href="1960s.html">1960s</a></li>
+      <li><a href="1970s.html">1970s</a></li>
+      <li><a href="1980s.html">1980s</a></li>
+      <li><a href="1990s.html">1990s</a></li>
+      <li><a href="2000s.html">2000s</a></li>
+      <li><a href="2010s.html">2010s</a></li>
+      <li><a href="2020s.html">2020s</a></li>
+      <li><a href="icons.html">Fashion Icons</a></li>
+      <li><a href="designers.html">Fashion Designers</a></li>
+      <li><a href="capitals.html">Fashion Capitals</a></li>
+      <li><a href="interactive.html">Quiz</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Welcome to Fashion Through Decades</h2>
+    <p>
+      Dive into the vibrant tapestry of fashion history with <em>Fashion Through Decades</em>!
+      Our mission is to guide fashion enthusiasts on an engaging journey through iconic styles and trends spanning
+      the 1920s to the 2020s.
+      Step in and discover how every decade has shaped the way we express ourselves through style!
+      Scroll down to see what we have to offer.
+    </p>
+  </main>
+
+  <section class="gallery">
+    <a href="1920s.html">
+      <img src="photos/ArtDeco.jpg" alt="1920s Fashion">
+      <span class="hover-heading">1920s Fashion</span>
+    </a>
+    <a href="1930s.html">
+      <img src="photos/1930s.jpg" alt="1930s Fashion">
+      <span class="hover-heading">1930s Fashion</span>
+    </a>
+    <a href="1940s.html">
+      <img src="photos/1940s.webp" alt="1940s Fashion">
+      <span class="hover-heading">1940s Fashion</span>
+    </a>
+    <a href="1950s.html">
+      <img src="photos/1950s.jpg" alt="1950s Fashion">
+      <span class="hover-heading">1950s Fashion</span>
+    </a>
+    <a href="1960s.html">
+      <img src="photos/1960s.jpg" alt="1960s Fashion">
+      <span class="hover-heading">1960s Fashion</span>
+    </a>
+    <a href="1970s.html">
+      <img src="photos/1970s.jpg" alt="1970s Fashion">
+      <span class="hover-heading">1970s Fashion</span>
+    </a>
+    <a href="1980s.html">
+      <img src="photos/1980s.jpg" alt="1980s Fashion">
+      <span class="hover-heading">1980s Fashion</span>
+    </a>
+    <a href="1990s.html">
+      <img src="photos/1990s.jpg" alt="1990s Fashion">
+      <span class="hover-heading">1990s Fashion</span>
+    </a>
+    <a href="2000s.html">
+      <img src="photos/2000s.jpg" alt="2000s Fashion">
+      <span class="hover-heading">2000s Fashion</span>
+    </a>
+    <a href="2010s.html">
+      <img src="photos/2010s.jpg" alt="2010s Fashion">
+      <span class="hover-heading">2010s Fashion</span>
+    </a>
+    <a href="2020s.html">
+      <img src="photos/2020s.jpg" alt="2020s Fashion">
+      <span class="hover-heading">2020s Fashion</span>
+    </a>
+    <a href="capitals.html">
+      <img src="photos/fashioncapitals.jpg" alt="Fashion Capitals">
+      <span class="hover-heading">Fashion Capitals</span>
+    </a>
+    <a href="designers.html">
+      <img src="photos/fashiondesigners.webp" alt="Fashion Designers">
+      <span class="hover-heading">Fashion Designers</span>
+    </a>
+    <a href="icons.html">
+      <img src="photos/fashionicons.jpg" alt="Fashion Icons">
+      <span class="hover-heading">Fashion Icons</span>
+    </a>
+    <a href="interactive.html">
+      <img src="photos/quiz.png" alt="Quiz">
+      <span class="hover-heading">Interactive Quiz</span>
+    </a>
+  </section>
+
+  <div class="arrow arrow-left">&#10094;</div> <!-- left Arrow -->
+  <div class="arrow arrow-right">&#10095;</div> <!-- right Arrow -->
+
+  <footer>
+    <p> <a href="about.html">About Us</a></p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const sideMenu = document.getElementById('side-menu');
+
+    menuToggle.addEventListener('click', () => {
+      sideMenu.classList.toggle('open');
+    });
+
+    const gallery = document.querySelector('.gallery');//selects the first element in the DOM with the class name gallery and assigns it to the gallery constant
+
+    document.querySelector('.arrow-left').addEventListener('click', () => {//adds an event listener to the left arrow button
+      gallery.scrollBy({//scrolls the .gallery container by 200 pixels to the left
+        left: -200,
+        behavior: 'smooth' //makes the scroll move smoothly insted of jumping instantly
+      });
+    });
+
+    //scrolls the .gallery container 200 pixels to the right
+    document.querySelector('.arrow-right').addEventListener('click', () => {
+      gallery.scrollBy({
+        left: 200,
+        behavior: 'smooth'
+      });
+    });
+  </script>
 </body>
+
 </html>

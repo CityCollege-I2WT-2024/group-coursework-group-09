@@ -1,10 +1,9 @@
-Group Name   :
-Website Title:
-Group Leader :
-Group Member1:
-Group Member2:
-Group Member3:
-Group Member4:
+Group Name   : Group 09
+Website Title: Fashion Through Decades
+Group Leader : Paulina Doroski
+Group Member1: Lea Petrovic
+Group Member2: Kostandina Mara
+Group Member3: Ioannis Maragiannis
 
 ## Instructions:
 - clone this repo

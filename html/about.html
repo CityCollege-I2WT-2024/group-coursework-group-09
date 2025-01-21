@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        #menu-toggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            right: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #444;
+            overflow-y: auto;
+            transition: right 0.3s;
+        }
+
+        nav.open {
+            right: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0;
+            padding: 10px;
+            border-bottom: 1px solid #555;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .team-member {
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-member h3 {
+            margin: 0 0 10px;
+            font-size: 1.5em;
+        }
+
+        .team-member p {
+            margin: 5px 0;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About Us</h1>
+        <button id="menu-toggle">&#9776;</button>
+    </header>
+
+    <nav id="side-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="1920s.html">1920s</a></li>
+            <li><a href="1930s.html">1930s</a></li>
+            <li><a href="1940s.html">1940s</a></li>
+            <li><a href="1950s.html">1950s</a></li>
+            <li><a href="1960s.html">1960s</a></li>
+            <li><a href="1970s.html">1970s</a></li>
+            <li><a href="1980s.html">1980s</a></li>
+            <li><a href="1990s.html">1990s</a></li>
+            <li><a href="2000s.html">2000s</a></li>
+            <li><a href="2010s.html">2010s</a></li>
+            <li><a href="2020s.html">2020s</a></li>
+            <li><a href="icons.html">Fashion Icons</a></li>
+            <li><a href="designers.html">Fashion Designers</a></li>
+            <li><a href="capitals.html">Fashion Capitals</a></li>
+            <li><a href="interactive.html">Quiz</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="team-member">
+            <h3>Paulina Doroski</h3>
+            <p>Role: Team Leader</p>
+            <p>Description: My name is Paulina Doroski. I was responsible for creating the main page, the 1920s page, the interactive quiz, and the 'About Us' page.</p>
+        </div>
+
+        <div class="team-member">
+            <h3>Lea Petrovic</h3>
+            <p>Role: Developer</p>
+            <p>Description: [Fill in details about Lea]</p>
+        </div>
+
+        <div class="team-member">
+            <h3>Kostandina Mara</h3>
+            <p>Role: Developer</p>
+            <p>Description: Hello everyone,
+                I am Kostandina Mara, a 19-year-old student at City College, University of York in Thessaloniki. I chose to study Computer Science because I am passionate about technology and aspire to create innovative solutions to everyday problems. Additionally, this degree offers endless opportunities to develop my skills and build a strong career in the future.
+                To share a bit more about myself, I would describe myself as an energetic, talkative person with a good sense of humor and plenty of patience. However, in some situations, I tend to speak without thinking. In my free time, I enjoy going for walks, shopping with friends, or reading books. My hobbies include boxing even though I’m a girl and playing volleyball, which I really enjoy. Lastly, I have a passion for creating TikTok videos!
+                For this website project, I created the following pages: "Fashion Through the Decades" (covering the 1930s, 1940s, 1950s, and 1960s) and a page about "Fashion Icons." To build these pages, I used HTML, CSS, and a little bit of JavaScript. Working on this project was a highly creative experience, and the teamwork was excellent.I particularly enjoy working with CSS because it allows me to bring creative ideas to life and make websites visually appealing.
+                If you’d like to contact me, feel free to email me at kmara@york.citycollege.eu.</p>
+        </div>
+
+        <div class="team-member">
+            <h3>Ioannis Maragiannis</h3>
+            <p>Role: Developer</p>
+            <p>Description: [Fill in details about Ioannis]</p>
+        </div>
+    </main>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const sideMenu = document.getElementById('side-menu');
+
+        menuToggle.addEventListener('click', (event) => {
+            event.stopPropagation();
+            sideMenu.classList.toggle('open');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!sideMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                sideMenu.classList.remove('open');
+            }
+        });
+    </script>
+</body>
+</html>
