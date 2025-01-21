@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Fashio Icons </title>
+    <a href="MarilynMonroe.html"></a>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e3e2e2;
+            color: #333333;
+            text-align: center;
+        }
+
+        header {
+            background-color: #222222;
+            color: white;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #e3e1e1;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            margin-bottom: 30px;
+            padding: 20px 0;
+            border-bottom: 1px solid #dddddd;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        section h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #444444;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 24px;
+            margin: 0 20px 20px 20px;
+        }
+
+        img {
+            width: auto;
+            max-width: 300px;
+            height: auto;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fashion Icons: 1950s to 1970s</h1>
+    </header>
+    <main>
+      
+        <section>
+            <h2>Marilyn Monroe-1950</h2>
+            <p>Marilyn Monroe, born Norma Jeane Mortenson on June 1, 1926, in Los Angeles, California, is widely regarded as one of the most iconic figures in Hollywood history. Despite a troubled childhood, including time in foster care, Marilyn rose to global fame as an actress, model, and cultural icon. Her breakthrough came in the 1950s with a series of box-office hits such as <i>Gentlemen Prefer Blondes</i> (1953) and <i>Some Like It Hot</i> (1959), where her blend of beauty, charm, and comedic timing captivated audiences.Marilyn's sense of style, characterized by bold femininity and timeless elegance, continues to influence the world of fashion. From her iconic white dress in The Seven Year Itch to her glamorous red carpet gowns, she set a standard for beauty and sophistication that endures to this day.</p>
+            <img src="https://m.media-amazon.com/images/M/MV5BZjJhNWVkMTAtOGE4NS00NTgzLWI4NjAtNTUyNTFjZmVlNDY4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Marilyn Monroe">
+        </section>
+
+       
+        <section>
+            <h2>Jackie Kennedy-1960</h2>
+            <p>Jacqueline "Jackie" Kennedy Onassis, born Jacqueline Lee Bouvier on July 28, 1929, was a trailblazing First Lady of the United States who redefined elegance, style, and cultural sophistication. Born into a privileged family in Southampton, New York, Jackie excelled in her education, studying literature, art, and French. Her marriage to John F. Kennedy in 1953 propelled her into the global spotlight, and as First Lady from 1961 to 1963, she was celebrated for her poise and intelligence.Known for her sophisticated fashion sense, Jackie popularized trends such as pillbox hats, tailored suits, and elegant accessories like pearls and gloves. Her collaboration with designer Oleg Cassini produced iconic looks that set a new standard for American fashion. Even in casual attire, Jackie exuded effortless style, inspiring generations with her timeless elegance.</p>
+            <img src="https://people.com/thmb/6nuCjIS5HRDhHGh4eQzMP3b01XY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(781x0:783x2)/jackie-kennedy-1e87ace53a794bdab7520d2fa0513287.jpg" alt="Jackie Kennedy">
+        </section>
+
+        
+        <section>
+            <h2>Bianca Jagger-1970</h2>
+            <p>Bianca Jagger, born Bianca Pérez-Mora Macías on May 2, 1945, in Managua, Nicaragua, rose to fame as a socialite, actress, and later as a dedicated human rights advocate. Educated in Paris, Bianca initially gained attention for her marriage to Mick Jagger of The Rolling Stones in 1971. Their glamorous lifestyle, combined with her striking beauty and style, made her a prominent figure in the 1970s fashion and social scenes.Bianca’s bold and elegant fashion choices redefined 1970s style. Known for her dramatic white suits, flowing gowns, and daring accessories, she became a muse for top designers like Halston and Yves Saint Laurent. Her fearless approach to blending masculine and feminine styles left a lasting impact on the world of fashion.</p>
+            <img src="https://wwd.com/wp-content/uploads/2024/05/fa00008783_00047_Enhanced.jpg?w=787" alt="Bianca Jagger">
+        </section>
+    </main>
+    
+
+
+
+        <script>
+            const menuToggle = document.getElementById('menu-toggle');
+            const sideMenu = document.getElementById('side-menu');
+    
+            // Toggle menu open and close
+            menuToggle.addEventListener('click', (event) => {
+                event.stopPropagation();
+                sideMenu.classList.toggle('open');
+            });
+    
+            // Close the menu if clicking outside
+            document.addEventListener('click', (event) => {
+                if (!sideMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                    sideMenu.classList.remove('open');
+                }
+            });
+        </script>
+</body>
+</html>

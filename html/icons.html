@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Icons</title>
+    <style>
+        
+  
+            body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-image: url('https://media.cnn.com/api/v1/images/stellar/prod/230728111853-01-20th-century-fashion-icons-illo-top-restricted.jpg?q=w_2000,c_fill'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center 20px; 
+  }
+
+  header {
+      text-align: center;
+      margin-top: 20px;
+
+  }
+  h1{
+    color: red;
+  }
+
+  main {
+      width: 80%;
+      max-width: 800px;
+  }
+
+  p {
+      background-color: #f0f0f0; 
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+  }
+
+  h2 {
+      text-align: center;
+      margin-top: 20px;
+  }
+
+  ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+  }
+
+  ul li {
+      margin: 10px 0;
+  }
+
+  a {
+      text-decoration: none;
+      color: #949090;
+      font-weight: bold;
+  }
+
+  a:hover {
+      color: #949292;
+  }
+  h2{
+    color: rgb(249, 19, 19);
+  }
+  
+  #menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    position: absolute; 
+    top: 20px; 
+    right: 20px; 
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Start hidden on the right */
+    width: 250px;
+    height: 100%;
+    background-color: #444;
+    overflow-y: auto;
+    transition: right 0.3s; /* Smooth sliding effect */
+    z-index: 2000; /* Ensure it appears on top of content */
+}
+
+nav.open {
+    right: 0; /* Move into view */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    padding: 10px;
+    border-bottom: 1px solid #555;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+  
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fashion Icons by Decade: 1920s to 2020s</h1>
+        <button id="menu-toggle">&#9776;</button>
+        
+    </header>
+    <nav id="side-menu">
+        <ul>
+            <li><a href="homePage.html">Home</a></li>
+            <li><a href="1920s.html">1920s</a></li>
+            <li><a href="1930s.html">1930s</a></li>
+            <li><a href="1940s.html">1940s</a></li>
+            <li><a href="1950s.html">1950s</a></li>
+            <li><a href="1960s.html">1960s</a></li>
+            <li><a href="1970s.html">1970s</a></li>
+            <li><a href="1980s.html">1980s</a></li>
+            <li><a href="1990s.html">1990s</a></li>
+            <li><a href="2000s.html">2000s</a></li>
+            <li><a href="2010s.html">2010s</a></li>
+            <li><a href="2020s.html">2020s</a></li>
+            <li><a href="future.html">Future Fashion</a></li>
+            <li><a href="icons.html">Fashion Icons</a></li>
+            <li><a href="designers.html">Fashion Designers</a></li>
+            <li><a href="capitals.html">Fashion Capitals</a></li>
+            <li><a href="interactive.html">Interactive</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+    <main>
+        <p>In this webpage you can discover many fashion icons all over the years which represent different time period from 1920 to nowdays.Every decade is being represented by 1 fashion icon.Below are presented 4 webpages where the first 3 pages each present 3 fashion icons and the last 2. After clicking on each webpage you will receive more detailed information.
+        </p>
+        <h2>Fashion icons of the 1920s , 1930s and 1940s.</h2>
+        <ul>
+            
+            <li><a href="MoreInformation.html" >Click here for more information</a></li>
+            
+        </ul>
+        <h2>Fashion icons of the 1950s , 1960s and 1970s.</h2>
+        <ul>
+            <li> <a href="MarilynMonroe.html">Click here for more information</a></li>
+        </ul>
+           
+        <h2>Fashions icons of the 1980s , 1990s and 2000s.</h2>
+        <ul>
+            <li> <a href="Madonna.html">Click here for more information</a></li>
+            
+        </ul>
+        <h2>Fashion icons of 2010s and 2020s.</h2>
+        <ul>
+            <li> <a href="Kendall.html">Click here for more information</a></li>
+        
+        </ul>
+
+       <img src="" alt="">
+
+    </main>
+</body>
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const sideMenu = document.getElementById('side-menu');
+
+    // Toggle menu open and close
+    menuToggle.addEventListener('click', (event) => {
+        event.stopPropagation();
+        sideMenu.classList.toggle('open');
+    });
+
+    // Close the menu if clicking outside
+    document.addEventListener('click', (event) => {
+        if (!sideMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+            sideMenu.classList.remove('open');
+        }
+    });
+</script>
+</html>

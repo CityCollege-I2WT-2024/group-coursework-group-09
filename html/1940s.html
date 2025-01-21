@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>1940s Wartime and Utility Fashion</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+    position: relative; /* To ensure side menu overlays */
+}
+
+header {
+    background-color: #393939;
+    color: white;
+    display: flex; /* spreads the elements in the header */
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+h2 {
+    color: #ffffff;
+}
+p {
+    color: #666565;
+}
+main {
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1; /* Ensure main content stays below the side menu */
+}
+
+#menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Start hidden on the right */
+    width: 250px;
+    height: 100%;
+    background-color: #444;
+    overflow-y: auto;
+    transition: right 0.3s; /* Smooth sliding effect */
+    z-index: 2000; /* Ensure it appears on top of content */
+}
+
+nav.open {
+    right: 0; /* Move into view */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    padding: 10px;
+    border-bottom: 1px solid #555;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+    position: relative; /* Ensure the gallery is above the base content */
+}
+
+.gallery a {
+    display: block;
+    position: relative;
+    text-decoration: none;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1; /* Make sure images stay below the menu */
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-container {
+    position: relative;
+    display: inline-block;
+}
+
+.gallery-title {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 5px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.gallery-container:hover .gallery-title {
+    display: block;
+}
+
+.description-box {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 2000; /* Ensure on top of other elements */
+}
+
+.description-box h3 {
+    margin: 0 0 10px;
+}
+
+.description-box button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1500; /* Ensure on top of other elements */
+}
+.gallery img {
+    width: 100%;
+    height: 400px; 
+    object-fit: cover; /* Ensures the image fills the space without distortion */
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1;}
+
+    </style>
+</head>
+<body>
+<header>
+    <h1>1940s - Fashion Through Decades</h1>
+    <button id="menu-toggle">&#9776;</button>
+</header>
+
+<nav id="side-menu">
+    <ul>
+        <li><a href="homePage.html">Home</a></li>
+        <li><a href="1920s.html">1920s</a></li>
+        <li><a href="1930s.html">1930s</a></li>
+        <li><a href="1940s.html">1940s</a></li>
+        <li><a href="1950s.html">1950s</a></li>
+        <li><a href="1960s.html">1960s</a></li>
+        <li><a href="1970s.html">1970s</a></li>
+        <li><a href="1980s.html">1980s</a></li>
+        <li><a href="1990s.html">1990s</a></li>
+        <li><a href="2000s.html">2000s</a></li>
+        <li><a href="2010s.html">2010s</a></li>
+        <li><a href="2020s.html">2020s</a></li>
+        <li><a href="future.html">Future Fashion</a></li>
+        <li><a href="icons.html">Fashion Icons</a></li>
+        <li><a href="designers.html">Fashion Designers</a></li>
+        <li><a href="capitals.html">Fashion Capitals</a></li>
+        <li><a href="interactive.html">Interactive</a></li>
+        <li><a href="about.html">About Us</a></li>
+    </ul>
+</nav>
+    
+<main>
+    <h2>1940s Wartime and Utility Fashion</h2>
+        <p>Fashion in the 1940s was heavily influenced by World War II, resulting in practical, resource-conscious designs that emphasized utility while maintaining style.Accessories were minimal, and muted or neutral colors like navy, brown, and khaki dominated, though bright floral prints and playful patterns offered moments of cheer amidst wartime austerity.</p>
+    <div class="gallery">
+        <div class="gallery-container">
+            <img src="https://image.glamourdaze.com/2019/04/WW2-Dresses-1943-Designer-Norman-Hartnell-Photo-James-Jarche.jpg" alt="Style" data-description="Utility clothing in the 1940s was a response to fabric rationing during World War II, blending style with functionality. These garments featured simple, practical designs with minimal detailing to conserve materials while ensuring durability. Often made in neutral colors and multipurpose styles, utility clothing was versatile enough for both work and daily wear. Despite the restrictions, individuals expressed their creativity by accessorizing with scarves, belts, and handmade embellishments to maintain a sense of personal style..
+
+            ">" 
+            <div class="gallery-title">Style Meets Function</div>
+            
+        </div>
+        <div class="gallery-container">
+            <img src="https://cdn.shopify.com/s/files/1/0523/8521/8751/files/katherine-hepburn-slacks.jpg" alt="Women’s" data-description="Silhouettes: Women's clothing emphasized structured and tailored designs, with broad, padded shoulders, cinched waists, and knee-length skirts or dresses creating a V silhouette.
+            Utility Clothing: Governments introduced utility clothing that adhered to rationing guidelines, using minimal fabric and simple patterns. Despite restrictions, women accessorized with belts, hats, and gloves to add individuality.
+            Trousers: Women adopted trousers and jumpsuits for work during the war, marking a shift toward practicality and breaking traditional gender norms.
+            Evening Wear: Despite rationing, evening gowns featured luxurious fabrics like rayon or repurposed materials, with long, flowing designs, sweetheart necklines, and modest embellishments." >"
+            <div class="gallery-title">Women’s Fashion</div>
+        </div>
+        <div class="gallery-container">
+            <img src="https://www.fashionbeans.com/wp-content/uploads/2024/02/20s.30s.40s.50s_boysonastoopinAnsoniaConnecticut1949.jpg" alt="Men's Fashion" data-description="Military Influence: Men’s fashion was heavily influenced by military uniforms, with boxy jackets, high-waisted trousers, and simple, structured cuts.
+            Everyday Wear: Suits became more modest due to fabric rationing, with single-breasted jackets and narrower lapels. Post-war, men’s suits regained wider lapels and fuller cuts.
+            Casualwear: Knitwear, button-down shirts, and bomber jackets were common, particularly for leisure.
+            ">
+            <div class="gallery-title">Men's Fashion</div>
+        </div>
+       
+        <div class="gallery-container">
+            <img src="https://i.pinimg.com/474x/a1/16/2f/a1162f495e794e8194f6f7aeb8c4ce6b.jpg" alt="Accessories" data-description="Hats were a popular accessory for both men and women, ranging from practical berets to elegant wide-brimmed styles. Women often wore scarves and practical shoes like wedges, while men favored fedoras or military caps. Jewelry was understated due to material shortages, though brooches and small pins added charm.">
+            <div class="gallery-title">Accessories</div>
+        </div>
+
+    
+
+    <div class="gallery-container">
+        <img src="https://i.pinimg.com/originals/db/de/ad/dbdeadfff2a271dad819f533d6a6ef98.jpg" alt="Colors and fabrics" 
+        data-description=" Fabrics: Rationing reduced access to luxury fabrics like silk and wool, leading to increased use of synthetic materials like rayon and nylon.
+        Colors: Wartime restrictions encouraged muted tones like navy, khaki, and gray, but post-war styles reintroduced brighter colors and floral prints">
+        <div class="gallery-title">Colors and Fabrics</div>
+    </div>
+
+    <div class="gallery-container">
+        <img src="https://images.squarespace-cdn.com/content/v1/54661df4e4b0c1af99306b69/1584611178677-G4F0PSYEX0MKDBL3VWK8/mansfield.jpg" alt="Influence of Film Genres" 
+        data-description="Film Noir: Movies like The Maltese Falcon and Double Indemnity inspired darker, more dramatic styles with trench coats, tailored suits, and femme fatale looks.
+        Musicals: Stars like Judy Garland and Gene Kelly showcased colorful, playful outfits in musicals, influencing casual and dancewear trends.
+        Historical Epics: Films like Gone with the Wind (1939, still influential in the early 1940s) inspired romanticized fashions, such as corseted waists and full skirts.
+        "
+        >
+        <div class="gallery-title">Influence of Film Genres</div>
+    </div>
+
+
+    <div class="gallery-container">
+        <img src="https://i.pinimg.com/736x/76/32/aa/7632aa77908ebe37b50992681977dd0a.jpg" alt="Wartime Influence and Hollywood’s Role" 
+        data-description="During World War II, Hollywood films provided hope and distraction, showcasing both utilitarian and glamorous styles:
+
+        Military-Inspired Fashion: Stars like Marlene Dietrich and Joan Crawford wore tailored suits and military-style jackets, which became popular off-screen. Women admired their confident, structured looks.
+        Patriotic Colors and Symbols: Costumes often included red, white, and blue, or motifs like stars and stripes, to support the war effort.
+        Practical Styles: Actresses wore functional outfits, such as slacks and jumpsuits, reflecting the roles women took on in factories and wartime industries. This normalized pants for women in daily life."
+        >
+        <div class="gallery-title">Wartime Influence and Hollywood’s Role</div>
+    </div>
+       
+    
+    <div class="gallery-container">
+        <img src="https://images.squarespace-cdn.com/content/v1/54661df4e4b0c1af99306b69/1584610977724-LJ6QPHFR0Y51AZAIRAYR/mansfield+2.jpg" alt="Hollywood's Reach Beyond the Screen" 
+        data-description="Magazines and Advertisements: Film stars frequently appeared in advertisements and magazine spreads, endorsing products and showcasing the latest trends. Women’s magazines often featured sewing patterns inspired by Hollywood looks.
+        Ready-to-Wear Collections: Retailers created affordable versions of on-screen fashions, allowing everyday people to emulate their favorite stars.
+        Victory Gardens and Hollywood: Celebrities participated in campaigns promoting wartime efforts, often in fashionable yet practical attire that blended utility with style.
+        "
+        >
+        <div class="gallery-title">Hollywood's Reach Beyond the Screen</div>
+    </div>
+       
+       
+
+
+       
+        
+</main>
+
+<div class="overlay" id="overlay"></div>
+<div class="description-box" id="description-box">
+    <h3 id="description-title"></h3>
+    <p id="description-text"></p>
+    <button id="close-button">Close</button>
+</div>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+        const sideMenu = document.getElementById('side-menu');
+
+        // Toggle menu open and close
+        menuToggle.addEventListener('click', (event) => {
+            event.stopPropagation();
+            sideMenu.classList.toggle('open');
+        });
+
+        // Close the menu if clicking outside
+        document.addEventListener('click', (event) => {
+            if (!sideMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                sideMenu.classList.remove('open');
+            }
+        });
+
+    const galleryImages = document.querySelectorAll('.gallery img');
+    const descriptionBox = document.getElementById('description-box');
+    const descriptionTitle = document.getElementById('description-title');
+    const descriptionText = document.getElementById('description-text');
+    const overlay = document.getElementById('overlay');
+    const closeButton = document.getElementById('close-button');
+
+    galleryImages.forEach(img => {
+        img.addEventListener('click', () => {
+            descriptionTitle.textContent = img.alt;
+            descriptionText.textContent = img.getAttribute('data-description');
+            descriptionBox.style.display = 'block';
+            overlay.style.display = 'block';
+        });
+    });
+
+    closeButton.addEventListener('click', () => {
+        descriptionBox.style.display = 'none';
+        overlay.style.display = 'none';
+    });
+
+    overlay.addEventListener('click', () => {
+        descriptionBox.style.display = 'none';
+        overlay.style.display = 'none';
+    });
+</script>
+</body>
+</html>
