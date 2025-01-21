@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+    <!--style-->
+    <link rel="stylesheet" href="interactive.css">
+    <!--for the page to scale correctly on different devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--title that will be displayed on the browser tab-->
+    <title>Guess the Designer - Quiz</title>
+</head>
+
+<body>
+
+  <header>
+    <h1>Guess the Designer - Quiz</h1>
+    <button id="menu-toggle">&#9776;</button>
+  </header>
+
+  <nav id="side-menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="1920s.html">1920s</a></li>
+      <li><a href="1930s.html">1930s</a></li>
+      <li><a href="1940s.html">1940s</a></li>
+      <li><a href="1950s.html">1950s</a></li>
+      <li><a href="1960s.html">1960s</a></li>
+      <li><a href="1970s.html">1970s</a></li>
+      <li><a href="1980s.html">1980s</a></li>
+      <li><a href="1990s.html">1990s</a></li>
+      <li><a href="2000s.html">2000s</a></li>
+      <li><a href="2010s.html">2010s</a></li>
+      <li><a href="2020s.html">2020s</a></li>
+      <li><a href="icons.html">Fashion Icons</a></li>
+      <li><a href="designers.html">Fashion Designers</a></li>
+      <li><a href="capitals.html">Fashion Capitals</a></li>
+      <li><a href="interactive.html">Quiz</a></li>
+      <li><a href="about.html">About Us</a></li>
+  </ul>
+  </nav>
+  <div class="quiz-container" id="quiz-container">
+    <h2>Guess the Designer</h2>
+    <img id="quiz-image" src="photos/fashionquiz1.jpg" alt="Fashion Image">
+    <div class="options">
+      <button class="option-button" id="option-1" onclick="checkAnswer('designer1')"></button>
+      <button class="option-button" id="option-2" onclick="checkAnswer('designer2')"></button>
+      <button class="option-button" id="option-3" onclick="checkAnswer('designer3')"></button>
+      <button class="option-button" id="option-4" onclick="checkAnswer('designer4')"></button>
+    </div>
+    <div class="result" id="result"></div>
+    <!--hides the next button when you click on it and displays the function nextQuestion-->
+    <button class="next-button" id="next-button" style="display: none;" onclick="nextQuestion()">Next Question</button>
+  </div>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const sideMenu = document.getElementById('side-menu');
+
+    //enables the side menu to slide into view when you click on it
+    menuToggle.addEventListener('click', (event) => {
+      event.stopPropagation(); //ensures the event doesn’t accidentally trigger other click-based behaviors.
+      sideMenu.classList.toggle('open'); //animates the sidebar in or out by adding/removing the open class.
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!sideMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+        sideMenu.classList.remove('open');
+      }
+    });
+    /*              MAIN IDEA FOR THE QUIZ
+        quizQuestions: Stores all the questions, correct answers, and options
+        loadQuestion(): Loads the current question (image and options)
+        checkAnswer(): Checks if the selected answer is correct and displays feedback
+        nextQuestion(): Moves to the next question when the user clicks the "Next Question" button*/
+
+    // array that holds quiz questions and options
+    const quizQuestions = [
+  {
+    image: "photos/fashionquiz1.jpg",
+    correctAnswer: "designer2",
+    options: {
+      designer1: "Alexander Wang",
+      designer2: "Dior",
+      designer3: "Versace",
+      designer4: "Oscar de la Renta"
+    }
+  },
+  {
+    image: "photos/fashionquiz2.webp",
+    correctAnswer: "designer3",
+    options: {
+      designer1: "Ralph Lauren",
+      designer2: "Dolce & Gabbana",
+      designer3: "Chanel",
+      designer4: "Jean Paul Gaultier"
+    }
+  },
+  {
+    image: "photos/fashionquiz3.jpg",
+    correctAnswer: "designer4",
+    options: {
+      designer1: "Christian Louboutin",
+      designer2: "Gucci",
+      designer3: "Versace",
+      designer4: "Schiaparelli"
+    }
+  },
+  {
+    image: "photos/fashionquiz4.jpg",
+    correctAnswer: "designer1",
+    options: {
+      designer1: "Lanvin",
+      designer2: "Vivienne Westwood",
+      designer3: "Dolce & Gabbana",
+      designer4: "Valentino"
+    }
+  },
+  {
+    image: "photos/fashionquiz5.webp",
+    correctAnswer: "designer4",
+    options: {
+      designer1: "Issey Miyake",
+      designer2: "Gucci",
+      designer3: "Hermès",
+      designer4: "Alexander McQueen"
+    }
+  },
+  {
+    image: "photos/fashionquiz6.png",
+    correctAnswer: "designer1",
+    options: {
+      designer1: "Vionnet",
+      designer2: "Balmain",
+      designer3: "Givenchy",
+      designer4: "Tom Ford"
+    }
+  },
+  {
+    image: "photos/fashionquiz7.jpg",
+    correctAnswer: "designer3",
+    options: {
+      designer1: "Carolina Herrera",
+      designer2: "Yves Saint Laurent",
+      designer3: "Balenciaga",
+      designer4: "Dior"
+    }
+  },
+  {
+    image: "photos/fashionquiz8.webp",
+    correctAnswer: "designer2",
+    options: {
+      designer1: "Tom Ford",
+      designer2: "Yves Saint Laurent",
+      designer3: "Stella McCartney",
+      designer4: "Dolce & Gabbana"
+    }
+  },
+  {
+    image: "photos/fashionquiz9.jpg",
+    correctAnswer: "designer1",
+    options: {
+      designer1: "Givenchy",
+      designer2: "Gucci",
+      designer3: "Versace",
+      designer4: "Dior"
+    }
+  },
+  {
+    image: "photos/fashionquiz10.webp",
+    correctAnswer: "designer4",
+    options: {
+      designer1: "Pierre Balmain",
+      designer2: "Chanel",
+      designer3: "Giorgio Armani",
+      designer4: "Tom Ford"
+    }
+  }
+];
+
+    //keeps track of which question is currently being displayed. It starts at 0, meaning the first question and as the user progresses through the quiz, this index will be updated to show the next question
+    let currentQuestionIndex = 0;
+
+    function loadQuestion() {
+      const question = quizQuestions[currentQuestionIndex]; //gets the current question object from the quizQuestions array
+      document.getElementById('quiz-image').src = question.image; //updates the image on the page to the image of the current question
+      document.getElementById('result').textContent = ''; //Clears any previous result message.
+      document.getElementById('next-button').style.display = 'none'; //hides the Next Question button at the start 
+
+      // update the text of the buttons with the correct designer names
+      document.getElementById('option-1').textContent = question.options.designer1;
+      document.getElementById('option-2').textContent = question.options.designer2;
+      document.getElementById('option-3').textContent = question.options.designer3;
+      document.getElementById('option-4').textContent = question.options.designer4;
+    }
+
+    //function is triggered when the user clicks on one of the designer name buttons
+    function checkAnswer(selectedDesigner) {//takes the selectedDesigner as a parameter, which corresponds to the id of the button
+      const question = quizQuestions[currentQuestionIndex]; //Fetches the current question from the quizQuestions array
+      if (selectedDesigner === question.correctAnswer) { //checks if the selected answer matches the correct answer for this question
+        document.getElementById('result').textContent = "Correct!"; // textContent Updates the text of an element
+        document.getElementById('result').style.color = "green";//sets the text color of the result element to green
+      } else {
+        document.getElementById('result').textContent = "Wrong! Try again.";
+        document.getElementById('result').style.color = "red";//if the answer is wrong, it displays Wrong! Try again in red
+      }
+      document.getElementById('next-button').style.display = 'block'; //Next Question button is displayed
+    }
+
+    //function is triggered when the user clicks the Next Question button
+    function nextQuestion() {
+      currentQuestionIndex++; //increases the question index by one, moving to the next question
+      if (currentQuestionIndex < quizQuestions.length) { //checks if there are more questions in the array
+        loadQuestion(); //if there are more questions, it calls loadQuestion() to load the next question
+      } else {
+        document.getElementById('result').textContent = "You've completed the quiz!";
+        document.getElementById('next-button').style.display = 'none'; //if all questions have been completed, it displays "You've completed the quiz!" and hides the "Next Question" button
+      }
+    }
+
+    loadQuestion();  // ensures that the first question is loaded when the page is first opened
+  </script>
+
+</body>
+
+</html>
