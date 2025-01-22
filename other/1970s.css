@@ -5,26 +5,28 @@ body {
     background-color: #f4f4f4;
     position: relative;
 }
-
 header {
-    background-color: #333;
+    background-color: rgba(51, 51, 51);
     color: white;
     display: flex;
+    /*spreads the elements (menu button)*/
     align-items: center;
+    /*vertically centers items*/
     justify-content: space-between;
+    /*spaces items evenly, with one at each end*/
     padding: 10px 20px;
+    /*adds inner spacing around the header*/
 }
 
 header h1 {
-    font-family: 'Georgia', serif;
-            font-size: 25px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
     margin: 0;
     
 }
-
 
 main {
     padding: 20px;
